@@ -401,8 +401,8 @@ main #prev {
     height: 2px;
     width: 20px;
     background-color: #F9FAFB;
-    -webkit-transition: all .3s ease-in-out;
-    transition: all .3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
     -webkit-transform-origin: 21px;
             transform-origin: 21px;
   }

@@ -233,7 +233,7 @@ main {
           height: 2px;
           width: 20px;
           background-color: $gray-50;
-          transition: all .3s ease-in-out;
+          transition: all 0.3s ease-in-out;
           transform-origin: 21px;
 
           &:not(:last-child) {
