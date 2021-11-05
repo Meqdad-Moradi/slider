@@ -1,0 +1,19 @@
+@mixin flex() {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin hoverEffect() {
+  content: "";
+  height: 2px;
+  width: 0%;
+  background-color: $gray-300;
+  position: absolute;
+  left: 50%;
+  bottom: -2px;
+  transform: translateX(-50%);
+  transition: all 0.3s ease-in-out;
+}

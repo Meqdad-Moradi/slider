@@ -1,0 +1,260 @@
+@import "color";
+@import "vars";
+@import "global";
+
+main {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  //   height: 100vh;
+
+  header {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 70px;
+    padding: 1.5em 0 0 0;
+    z-index: 10000;
+
+    a {
+      color: $gray-50;
+      text-decoration: none;
+    }
+
+    .logo {
+      h1 {
+        font-size: 1.7rem;
+        text-transform: uppercase;
+        font-weight: 300;
+      }
+    }
+
+    .nav {
+      @include flex();
+      padding: 0 10%;
+    }
+
+    .nav-list {
+      @include flex();
+
+      li:not(:last-child) {
+        margin-right: 2.5em;
+      }
+
+      a {
+        position: relative;
+        font-weight: 300;
+        font-size: 1.125rem;
+        letter-spacing: 1px;
+        transition: all 0.3s ease-in-out;
+
+        &::after {
+          @include hoverEffect();
+        }
+
+        &:hover {
+          color: $gray-300;
+          &::after {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .toggler {
+      color: $gray-50;
+      font-size: 1.25rem;
+      display: none;
+    }
+  }
+
+  .controler {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(30px);
+    display: flex;
+    flex-direction: row;
+    z-index: 20;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      background-color: $gray-800;
+
+      .controler-btn {
+        color: $gray-50;
+      }
+    }
+  }
+
+  .controler-btn {
+    font-size: 1.5rem;
+    padding: 0.3em 0.5em;
+    color: $gray-800;
+  }
+
+  #next {
+    right: 5%;
+  }
+
+  #prev {
+    left: 5%;
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &::after {
+    content: "";
+    background-image: linear-gradient(
+      90deg,
+      rgba(255, 0, 179, 0.1),
+      rgba(0, 68, 255, 0.1)
+    );
+    background-color: rgba($color: #000000, $alpha: 0.3);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease-in-out;
+
+  &.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  img {
+    object-fit: cover;
+    height: 100%;
+  }
+
+  .slide-content {
+    position: absolute;
+    width: 80%;
+    max-width: 90%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 10;
+
+    .title {
+      color: $gray-50;
+      text-transform: uppercase;
+      font-size: 4rem;
+      letter-spacing: 8px;
+      line-height: normal;
+    }
+
+    .body-text {
+      color: $gray-100;
+      font-size: 1.25rem;
+      font-weight: 300;
+    }
+
+    .btn {
+      margin-top: 3em;
+    }
+  }
+}
+
+@media (max-width: 760px) {
+  main {
+    header {
+      .logo,
+      .toggler {
+        position: relative;
+        z-index: 10000;
+      }
+
+      .nav-list {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 0;
+        width: 100vw;
+        padding: 0 0 0 10%;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        background-color: $gray-800;
+        z-index: 1000;
+        overflow: hidden;
+        transition: all 0.3s ease-in-out;
+
+        &.active {
+          height: 100vh;
+          overflow: visible;
+        }
+
+        li {
+          margin: 0;
+          margin-bottom: 1em;
+          text-align: left;
+        }
+
+        a {
+          position: relative;
+          width: 100%;
+        }
+      }
+
+      .toggler {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        span {
+          display: inline-block;
+          height: 2px;
+          width: 20px;
+          background-color: $gray-50;
+          transition: all .3s ease-in-out;
+          transform-origin: 21px;
+
+          &:not(:last-child) {
+            margin-bottom: 0.3em;
+          }
+        }
+
+        &.active {
+          span:first-child {
+            transform: rotate(-45deg);
+          }
+
+          span:nth-child(2) {
+            opacity: 0;
+          }
+
+          span:last-child {
+            transform: rotate(45deg);
+          }
+        }
+      }
+    }
+  }
+}
