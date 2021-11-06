@@ -108,13 +108,13 @@ p:not(:first-child) {
   background-color: #3B82F6;
 }
 
-main {
+#main {
   position: relative;
   width: 100%;
   max-width: 100%;
 }
 
-main header {
+#main #header {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -123,18 +123,18 @@ main header {
   z-index: 10000;
 }
 
-main header a {
+#main #header a {
   color: #F9FAFB;
   text-decoration: none;
 }
 
-main header .logo h1 {
+#main #header .logo h1 {
   font-size: 1.7rem;
   text-transform: uppercase;
   font-weight: 300;
 }
 
-main header .nav {
+#main #header .nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -153,7 +153,7 @@ main header .nav {
   padding: 0 10%;
 }
 
-main header .nav-list {
+#main #header .nav-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -171,11 +171,11 @@ main header .nav-list {
           align-items: center;
 }
 
-main header .nav-list li:not(:last-child) {
+#main #header .nav-list li:not(:last-child) {
   margin-right: 2.5em;
 }
 
-main header .nav-list a {
+#main #header .nav-list a {
   position: relative;
   font-weight: 300;
   font-size: 1.125rem;
@@ -184,7 +184,7 @@ main header .nav-list a {
   transition: all 0.3s ease-in-out;
 }
 
-main header .nav-list a::after {
+#main #header .nav-list a::after {
   content: "";
   height: 2px;
   width: 0%;
@@ -198,21 +198,21 @@ main header .nav-list a::after {
   transition: all 0.3s ease-in-out;
 }
 
-main header .nav-list a:hover {
+#main #header .nav-list a:hover {
   color: #D1D5DB;
 }
 
-main header .nav-list a:hover::after {
+#main #header .nav-list a:hover::after {
   width: 100%;
 }
 
-main header .toggler {
+#main #header .toggler {
   color: #F9FAFB;
   font-size: 1.25rem;
   display: none;
 }
 
-main .controler {
+#main .controler {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -232,25 +232,25 @@ main .controler {
   transition: all 0.3s ease-in-out;
 }
 
-main .controler:hover {
+#main .controler:hover {
   background-color: #1F2937;
 }
 
-main .controler:hover .controler-btn {
+#main .controler:hover .controler-btn {
   color: #F9FAFB;
 }
 
-main .controler-btn {
+#main .controler-btn {
   font-size: 1.5rem;
   padding: 0.3em 0.5em;
   color: #1F2937;
 }
 
-main #next {
+#main #next {
   right: 5%;
 }
 
-main #prev {
+#main #prev {
   left: 5%;
 }
 
@@ -340,12 +340,12 @@ main #prev {
 }
 
 @media (max-width: 760px) {
-  main header .logo,
-  main header .toggler {
+  #main #header .logo,
+  #main #header .toggler {
     position: relative;
     z-index: 10000;
   }
-  main header .nav-list {
+  #main #header .nav-list {
     position: fixed;
     top: 0;
     left: 0;
@@ -368,20 +368,20 @@ main #prev {
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
   }
-  main header .nav-list.active {
+  #main #header .nav-list.active {
     height: 100vh;
     overflow: visible;
   }
-  main header .nav-list li {
+  #main #header .nav-list li {
     margin: 0;
     margin-bottom: 1em;
     text-align: left;
   }
-  main header .nav-list a {
+  #main #header .nav-list a {
     position: relative;
     width: 100%;
   }
-  main header .toggler {
+  #main #header .toggler {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -396,27 +396,28 @@ main #prev {
         -ms-flex-align: center;
             align-items: center;
   }
-  main header .toggler span {
+  #main #header .toggler span {
     display: inline-block;
     height: 2px;
     width: 20px;
+    font-weight: 300;
     background-color: #F9FAFB;
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
     -webkit-transform-origin: 21px;
             transform-origin: 21px;
   }
-  main header .toggler span:not(:last-child) {
+  #main #header .toggler span:not(:last-child) {
     margin-bottom: 0.3em;
   }
-  main header .toggler.active span:first-child {
+  #main #header .toggler.active span:first-child {
     -webkit-transform: rotate(-45deg);
             transform: rotate(-45deg);
   }
-  main header .toggler.active span:nth-child(2) {
+  #main #header .toggler.active span:nth-child(2) {
     opacity: 0;
   }
-  main header .toggler.active span:last-child {
+  #main #header .toggler.active span:last-child {
     -webkit-transform: rotate(45deg);
             transform: rotate(45deg);
   }
