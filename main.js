@@ -10,6 +10,7 @@ function nextSlide() {
   const activeSlide = document.querySelector(".slide.active");
   const nextSlideEl = activeSlide.nextElementSibling;
 
+  // remove all active slide CLASS
   reset();
 
   if (nextSlideEl) {
@@ -44,6 +45,6 @@ const toggler = document.querySelector(".toggler");
 
 toggler.addEventListener("click", (e) => {
   const currentTarget = e.currentTarget;
-  currentTarget.classList.toggle('active')
+  currentTarget.classList.toggle("active");
   navList.classList.toggle("active");
 });
